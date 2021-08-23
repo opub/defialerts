@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>DeFi Alerts</title>
+    <meta charset="utf-8">
+    <meta name="application-name" content="DeFi Alerts" />
+    <meta name="keywords"  content="defi token price alert cryptocurrency crypto binance smart chain bsc polygon matic ethereum bitcoin" />
+    <meta name="description" content="Automated DeFi token price alerts">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#424242">
+    <meta name="theme-color" content="#424242">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/main.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#424242">
+    <script src="/main.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form id="alert" autocomplete="off">
+            <h1>DeFi Alerts</h1>
+            <div class="group">
+                <input id="email" type="email" required="required" placeholder=" " />
+                <label>Email</label>
+            </div>
+            <div class="group">
+                <input id="token" type="text" minlength="42" maxlength="42" required="required" placeholder=" " />
+                <label>Token</label>
+            </div>
+            <div class="group">
+                <input id="above" type="number" min="0" required="required" placeholder=" " />
+                <label>Alert When Above</label>
+            </div>
+            <div class="group">
+                <input id="below" type="number" min="0" required="required" placeholder=" " />
+                <label>Alert When Below</label>
+            </div>
+            <div class="group">
+                <a id="submit" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                </a>
+            </div>
+            <input type="hidden" id="verify" />
+        </form>
+    </div>
+
+    <div class="footer">
+        <div>Icons made by <a href="" title="xnimrodx">xnimrodx</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div class="g-recaptcha" data-sitekey="6LfZwhocAAAAAPhY_rU5G3ocBXKSax71PvlbPaKY" data-callback="onSubmit" data-size="invisible"></div>
+    </div>
+</body>
+
+</html>

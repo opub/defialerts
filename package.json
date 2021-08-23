@@ -1,0 +1,24 @@
+{
+  "name": "alerts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "debug": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-respond": "^2.1.0",
+    "koa-router": "^10.0.0",
+    "koa-static-server": "^1.5.2"
+  },
+  "nodemonConfig": {
+    "ext": "html,js,json,css"
+  }
+}
