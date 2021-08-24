@@ -12,7 +12,17 @@ const PORT = 3000;
 const app = module.exports = new koa();
 
 // middleware
-app.use(logger());
+function ignoreStatic(mw) {
+    return async function (ctx, next) {
+        if (/(\.js|\.css|\.ico|\.png|\.svg)$/.test(ctx.path)) {
+            await next();
+        } else {
+            // must .call() to explicitly set the receiver
+            await mw.call(this, ctx, next);
+        }
+    };
+}
+app.use(ignoreStatic(logger()));
 app.use(respond());
 app.use(bodyParser({
     onerror: function (err, ctx) {

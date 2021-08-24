@@ -53,29 +53,36 @@ function validateForm() {
     formValid = valid;
 }
 
-function onSubmit(recaptcha) {
-    const data = { 
+function onSubmit(captcha) {
+    const data = {
         email: get('email'),
         token: get('token'),
         above: get('above'),
         below: get('below'),
-        verify: recaptcha
+        captcha
     };
 
     fetch('/api/v1/alert', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
     })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Request Failed - ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            alert('SUCCESS');
+        })
+        .catch((error) => {
+            console.error(error);
+            alert(error.message);
+        });
 }
 
 function get(name) {

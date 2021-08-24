@@ -1,6 +1,7 @@
 const router = require('koa-router')();
+const captcha = require('../../middleware/captcha');
 
-router.post('/', async (ctx) => {
+router.post('/', captcha, async (ctx) => {
     // if (!checkServerRequest(ctx)) {
     //     ctx.send(ctx.status, {err: jsonErrors(ctx.errors)})
     //     return
